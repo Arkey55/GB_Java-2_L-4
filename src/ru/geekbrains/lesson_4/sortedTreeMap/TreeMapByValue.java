@@ -25,7 +25,7 @@ public class TreeMapByValue {
     private static void sortWithoutComparator (Map mp){
         Set<Integer> hs = new HashSet(mp.values());
         for (Integer integer : hs){
-            for(Map.Entry entry : map.entrySet()){
+            for(Map.Entry entry : map.entrySet()){  //почему нельзя передать mp.entrySet() не понимаю!!!
                 if(entry.getValue().equals(integer)) {
                     System.out.print("{" + entry.getKey() + "=" + entry.getValue() + "}");
                 }
