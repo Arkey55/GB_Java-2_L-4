@@ -24,10 +24,9 @@ public class TreeMapByValue {
 
     private static void sortWithoutComparator (Map mp){
         Set<Integer> hs = new HashSet(mp.values());
-        List<Integer> ls = new ArrayList(hs);
-        for (int i = 0; i <= ls.size(); i++){
-            for(Map.Entry entry : map.entrySet()) {
-                if(entry.getValue().equals(i)) {
+        for (Integer integer : hs){
+            for(Map.Entry entry : map.entrySet()){
+                if(entry.getValue().equals(integer)) {
                     System.out.print("{" + entry.getKey() + "=" + entry.getValue() + "}");
                 }
             }
