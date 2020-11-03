@@ -3,11 +3,9 @@ package ru.geekbrains.lesson_4.sortedTreeMap;
 import java.util.*;
 
 public class TreeMapByValue {
-    private static Map<String, Integer> map = new TreeMap<>();
-    private static Map<String, Integer> sortedMap = new TreeMap(new ValueComparator(map));
     public static void main(String[] args) {
-//        Map<String, Integer> map = new TreeMap<>();
-//        Map<String, Integer> sortedMap = new TreeMap(new ValueComparator(map));
+        Map<String, Integer> map = new TreeMap<>();
+        Map<String, Integer> sortedMap = new TreeMap(new ValueComparator(map));
 
         map.put("10", 5);
         map.put("20", 4);
@@ -22,10 +20,10 @@ public class TreeMapByValue {
 
     }
 
-    private static void sortWithoutComparator (Map mp){
+    private static void sortWithoutComparator (Map <String, Integer> mp){
         Set<Integer> hs = new HashSet(mp.values());
         for (Integer integer : hs){
-            for(Map.Entry entry : map.entrySet()){  //почему нельзя передать mp.entrySet() не понимаю!!!
+            for(Map.Entry entry : mp.entrySet()){
                 if(entry.getValue().equals(integer)) {
                     System.out.print("{" + entry.getKey() + "=" + entry.getValue() + "}");
                 }
